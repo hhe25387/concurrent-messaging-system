@@ -18,3 +18,11 @@ This project is a Direct Messaging Chat application developed for **ICS 32**. It
 * **Python 3**
 * **Tkinter** (GUI)
 * **Socket Programming**
+
+## 🛠️ Known Issues & Future Architecture Improvements
+
+As this project was initially developed as a foundational course project (ICS 32), the current architecture prioritizes basic functionality and exception resistance over high-concurrency performance. If this were to be scaled for production, I would implement the following improvements:
+
+1. **Asynchronous I/O to Prevent GUI Blocking:** Currently, socket operations in `ds_messenger.py` are synchronous. Under heavy network latency, the Tkinter `mainloop()` might experience blocking (UI freezing). Future iterations would move network requests to a background thread or utilize Python's `asyncio` framework.
+2. **Refining Exception Handling:** To guarantee system stability and prevent crash loops, broad exception blocks (`except Exception:`) are currently used. Moving forward, I plan to design more granular exception classes to handle specific socket timeouts and JSON decode errors separately.
+3. **Security Enhancements:** The current DSP protocol transmits data via unencrypted JSON strings over TCP sockets as a proof-of-concept. For real-world deployment, TLS/SSL wrappers would be necessary to ensure data privacy.
