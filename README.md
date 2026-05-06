@@ -1,7 +1,6 @@
 # ICS 32: Direct Messaging Chat Application
 
 **Author:** He He  
-**Student ID:** 82678258  
 **Email:** heh15@uci.edu
 
 ---
